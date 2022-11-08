@@ -76,8 +76,8 @@ fi
 
 # TODO: Configure busybox
 echo "Configure busybox"
-make distclean
-make defconfig
+sudo make distclean
+sudo make defconfig
 
 # TODO: Make and install busybox
 echo "Make and install busybox"
@@ -95,10 +95,10 @@ echo "Add library dependencies to rootfs"
 SYSROOT=$(${CROSS_COMPILE}gcc --print-sysroot)
 echo "Compiler sysroot is: ${SYSROOT}"
 
-sudo cp -a ${SYSROOT}/lib64/ld-2.33.so lib64
-sudo cp -a ${SYSROOT}/lib64/libm-2.33.so lib64
-sudo cp -a ${SYSROOT}/lib64/libresolv-2.33.so lib64
-sudo cp -a ${SYSROOT}/lib64/libc-2.33.so lib64
+sudo cp -a ${SYSROOT}/lib64/ld-2.31.so lib64
+sudo cp -a ${SYSROOT}/lib64/libm-2.31.so lib64
+sudo cp -a ${SYSROOT}/lib64/libresolv-2.31.so lib64
+sudo cp -a ${SYSROOT}/lib64/libc-2.31.so lib64
 
 sudo cp -a ${SYSROOT}/lib/ld-linux-aarch64.so.1 lib
 sudo chown root:root lib/ld-linux-aarch64.so.1
