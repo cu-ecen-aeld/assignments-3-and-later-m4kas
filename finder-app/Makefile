@@ -1,4 +1,4 @@
-writer:
-	$(CROSS_COMPILE)gcc -o writer writer.c
+all:
+	$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) -o $(TARGET) $(LDFLAGS)
 clean:
 	rm -f writer
