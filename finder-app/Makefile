@@ -1,4 +1,4 @@
 all:
-	$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) -o $(TARGET) $(LDFLAGS)
+	$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) -o writer writer.c
 clean:
 	rm -f writer
