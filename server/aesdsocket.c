@@ -70,6 +70,8 @@ int main(int argc, char **argv)
     struct addrinfo hints;
     memset((void *)&hints, 0, sizeof(hints));
     hints.ai_flags = AI_PASSIVE;
+    hints.ai_family = PF_INET;
+    hints.ai_socktype = SOCK_STREAM;
     struct addrinfo *servinfo;
 
     int status;
