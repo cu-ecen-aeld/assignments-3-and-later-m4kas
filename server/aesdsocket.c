@@ -96,7 +96,7 @@ int main(int argc, char **argv)
     int bind_status = 0;
     if ((bind_status = bind(socket_id, servinfo->ai_addr, sizeof(struct sockaddr))) != 0)
     {
-        syslog(LOG_ERR, "bind error, result code: %d", bind_status);
+        syslog(LOG_ERR, "bind error, result code: %d, errno: %d", bind_status, errno);
         exit(-1);
     }
 
