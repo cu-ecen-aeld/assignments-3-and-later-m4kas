@@ -93,9 +93,10 @@ int main(int argc, char **argv)
         //printf("socket() success\n");
     }
 
-    if (bind(socket_id, servinfo->ai_addr, sizeof(struct sockaddr)) != 0)
+    int bind_status = 0;
+    if ((bind_status = bind(socket_id, servinfo->ai_addr, sizeof(struct sockaddr))) != 0)
     {
-        syslog(LOG_ERR, "bind error");
+        syslog(LOG_ERR, "bind error, result code: %d", bind_status);
         exit(-1);
     }
 
